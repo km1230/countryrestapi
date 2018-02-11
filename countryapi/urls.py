@@ -20,7 +20,7 @@ from country import views as cv
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', cv.index, name='index'),
-    path('add_country/', cv.add_country, name='add_country'),
-    path('add_state/', cv.add_state, name='add_state'),
+    #path('add_country/', cv.add_country, name='add_country'),
+    #path('add_state/', cv.add_state, name='add_state'),
     path('<key>/', cv.state_of_country_json, name='find_state')
 ]
