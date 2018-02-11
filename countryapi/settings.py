@@ -123,13 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
-#Media files for upload and storage
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/'
