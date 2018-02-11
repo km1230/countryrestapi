@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>States of countries | countryapi</title>
+  </head>
+  <body class='bg-light'>
+    <div class='container card mt-3 mb-3'>
+    	<div class='row card-header bg-primary text-white'>
+    		<div class='col-12 d-flex justify-content-center'>
+    			<h1>Finding states of a country in JSON</h1>
+    		</div>
+    	</div>
+    	<div class='row card-body'>
+    		<div class='col-12 d-flex justify-content-center'>
+    			<span>It's simple! Add the </span>
+    			<a href='#alpha2' class='ml-2 mr-2 pr-1 pl-1 bg-success text-light'>alpha-2 code (lowercases)</a>
+    			<span> of a country to the url and see the result!</span>
+    		</div>
+    		<div class='col-12 d-flex justify-content-center'>
+    			<span>e.g. <em>http://countryapi.herokuapp.com/us/</em></span>
+    		</div>
+    		<div class='col-12 d-flex justify-content-center mt-5 mb-3'>
+    			<span class='bg-dark text-white p-2'>
+    				{"country": NAME_OF_COUNTRY, "states": [LIST_OF_STATES]}
+    			</span>
+    		</div>
+    	</div>
+    </div>
+    <div class='container card mb-3'>
+    	<div class='row card-header bg-secondary text-white' id=alpha2>
+    		<div class='col-12 d-flex justify-content-center'><h3>Alpha2 Code of Countries</h3></div>
+    	</div>
+    	<div class='row card-body'>
+    		<div class='col-12 d-flex justify-content-center'>
+    			<table class='table table-striped'>
+    				<thead>
+    					<tr>
+    						<th scope='col'></th>
+    						<th scope='col'>Country Name</th>
+    						<th scope='col'>Alpha2 Code</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					{% for country in countries %}
+    					<tr>
+    						<th scope='row'></th>
+    						<td>{{ country.name }}</td>
+    						<td>{{ country.iso }}</td>
+    					</tr>
+    					{% endfor %}
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
