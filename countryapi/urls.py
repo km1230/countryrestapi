@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', cv.index, name='index'),
     #path('add_country/', cv.add_country, name='add_country'),
-    path('add_state/', cv.add_state, name='add_state'),
-    path('remove_state/', cv.remove_state, name='remove_state'),
-    re_path(r'.{2}', cv.state_of_country_json, name='find_state'),
+    #path('add_state/', cv.add_state, name='add_state'),
+    #path('remove_state/', cv.remove_state, name='remove_state'),
+    re_path(r'([\w]{2})/', cv.state_of_country_json, name='find_state'),
 ]
