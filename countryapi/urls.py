@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, re_path
 from django.contrib import admin
 from country import views as cv
 
@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', cv.index, name='index'),
     #path('add_country/', cv.add_country, name='add_country'),
-    #path('add_state/', cv.add_state, name='add_state'),
-    path('<key>/', cv.state_of_country_json, name='find_state')
+    path('add_state/', cv.add_state, name='add_state'),
+    path('remove_state/', cv.remove_state, name='remove_state'),
+    re_path(r'.{2}', cv.state_of_country_json, name='find_state'),
 ]
