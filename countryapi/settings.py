@@ -18,7 +18,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Forcing HTTPS
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = config('SSL', default=True, cast=bool)
 
 # Application definition
 
