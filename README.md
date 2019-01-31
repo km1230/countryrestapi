@@ -8,6 +8,7 @@
 
 ## Capture:
 ![Capture](https://i.imgur.com/lSuahZG.png)
+![Demo](https://github.com/km1230/countryrestapi/blob/master/demo2.png?raw=true)
 
 ## Author:
 * [km1230](https://devjunior.com)
